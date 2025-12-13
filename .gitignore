@@ -11,7 +11,8 @@ build/
 *.spec
 # AppImage build artifacts
 AppDir/
-*.AppImage
+# Allow the specific binary
+!RK_Gaming_Keyboard.AppImage
 *.log
 terminals/
 
