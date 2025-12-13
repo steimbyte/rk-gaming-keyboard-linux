@@ -1,53 +1,73 @@
 # RK Gaming Keyboard Configuration App (Linux Standalone)
 
-This is a local, standalone version of the RK Gaming keyboard configuration site. It wraps the website in a lightweight local server and launches it in a dedicated browser window (Chrome/Chromium app mode), providing a native application feel with full WebHID support for device communication.
+This is a **standalone, offline-capable Linux application** for configuring RK Gaming keyboards. It mirrors the official web-based driver (drive2.rkgaming.com) and wraps it in a lightweight local environment, solving the issue of WebHID not working in standard file-based browsing.
 
-## Prerequisites
+## 🚀 Features
 
-- **Python 3** (The AppImage uses the system Python 3).
-- **Chromium-based Browser**: Google Chrome, Chromium, Brave, or Edge. (Required for WebHID support).
+- **Full Linux Support**: Runs flawlessly on most Linux distributions.
+- **Offline Capable**: All website assets are bundled locally; no internet connection required after download.
+- **WebHID Support**: Communicates directly with your keyboard via USB.
+- **Browser Selection**: Automatically detects installed Chromium-based browsers (including Flatpaks) and lets you choose which one to use.
+- **Native Experience**: Runs in a dedicated window ("App Mode") without address bars or tabs.
 
-## Installation / Usage
+## 📋 Prerequisites
+
+- **Python 3** (Pre-installed on almost all Linux distros).
+- **A Chromium-based Browser**: WebHID support is required. Supported browsers include:
+    - Google Chrome (Native & Flatpak)
+    - Chromium (Native & Flatpak)
+    - Brave (Native & Flatpak)
+    - Microsoft Edge (Native & Flatpak)
+    - Opera / Vivaldi
+
+## 📥 Installation & Usage
 
 ### Option 1: AppImage (Recommended)
 
-A single-file executable is available.
+The easiest way to run the app. It's a single file containing everything you need.
 
-1.  Download or locate `RK_Gaming_Keyboard.AppImage` in this folder.
-2.  Make it executable (if not already):
+1.  **Download** `RK_Gaming_Keyboard.AppImage` from this repository.
+2.  **Make it executable**:
     ```bash
     chmod +x RK_Gaming_Keyboard.AppImage
     ```
-3.  Run it:
+3.  **Run it**:
     ```bash
     ./RK_Gaming_Keyboard.AppImage
     ```
 
-### Option 2: Install Script
+### Option 2: Desktop Integration (Install to Menu)
 
-To integrate it into your desktop environment (start menu):
+If you want the app to appear in your system's Start Menu / Application Launcher:
 
-1.  Open a terminal in this folder.
-2.  Run the setup script:
+1.  Clone or download this repository.
+2.  Open a terminal in the folder.
+3.  Run the setup script:
     ```bash
     ./setup_linux.sh
     ```
-3.  The app **"RK Gaming Keyboard"** should now appear in your application menu.
+4.  Search for **"RK Gaming Keyboard"** in your application menu.
 
-### Option 3: Manual / Portable
+### Option 3: Manual / Portable (Source)
 
-You can run the python script directly:
+You can run the Python script directly from the source code:
 
-```bash
-./rk_app.py
-```
+1.  Ensure you have Python 3 installed.
+2.  Run the app:
+    ```bash
+    ./rk_app.py
+    ```
 
-## How It Works
+## 🛠 Troubleshooting
 
-- `rk_app.py`: This is the main runtime. It starts a local web server on a random free port and launches your installed browser in "App Mode" (`--app`), creating a standalone window without address bars or tabs. It uses a temporary user profile to ensure a clean environment.
-- `site/`: Contains the mirrored website assets.
+- **"No device found"**:
+    - Ensure your keyboard is connected via **USB** (wired mode).
+    - WebHID requires permission to access USB devices. Usually, modern Linux distros handle this automatically. If not, you may need to check your `udev` rules.
+    - Try running the browser/app as root (not recommended, but good for testing if it's a permission issue).
 
-## Troubleshooting
+- **"No supported browser found"**:
+    - The app looks for standard executables (`google-chrome`, `chromium-browser`, `brave-browser`, etc.) and Flatpaks. Ensure you have one installed.
 
-- **Device not found?** Ensure your browser has permission to access USB/HID devices. On Linux, you might need to update your `udev` rules for the keyboard if the browser cannot see it (though usually, the browser handles this if run as a regular user).
-- **No browser opens?** Install `google-chrome` or `chromium`.
+## ⚖️ Disclaimer
+
+This project is an unofficial wrapper and mirror of the RK Gaming configuration software. It is not affiliated with, endorsed by, or connected to RK Gaming. All original web assets belong to their respective owners.
