@@ -1,3 +1,5 @@
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/steimerbyte)
+
 # RK Gaming Keyboard Configuration App (Linux Standalone)
 
 This is a **standalone, offline-capable Linux application** for configuring RK Gaming keyboards. It mirrors the official web-based driver (drive2.rkgaming.com) and wraps it in a lightweight local environment, solving the issue of WebHID not working in standard file-based browsing.
