@@ -59,6 +59,7 @@ def detect_browsers():
         ("Chromium", "chromium-browser"),
         ("Chromium (Alt)", "chromium"),
         ("Brave", "brave-browser"),
+        ("Brave (snap)", "brave"),
         ("Microsoft Edge", "microsoft-edge"),
         ("Vivaldi", "vivaldi"),
         ("Opera", "opera")

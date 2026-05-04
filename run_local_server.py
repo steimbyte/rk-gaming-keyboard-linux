@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 import http.server
 import socketserver
 import os
 import sys
-import webbrowser
+import subprocess
 
 PORT = 8000
 DIRECTORY = "site/drive2.rkgaming.com"
@@ -25,9 +26,13 @@ print("Opening browser...")
 # Change directory to workspace root if needed, but the script handles directory param
 # We assume the script is run from the workspace root
 
+print(f"Serving at http://localhost:{PORT}")
+print("Starting browser via xdg-open...")
+
 try:
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        webbrowser.open(f"http://localhost:{PORT}")
+        # Use xdg-open instead of webbrowser
+        subprocess.Popen(["xdg-open", f"http://localhost:{PORT}"])
         httpd.serve_forever()
 except KeyboardInterrupt:
     print("\nServer stopped.")
