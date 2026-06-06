@@ -123,3 +123,9 @@ You can run the Python script directly from the source code:
 ## ⚖️ Disclaimer
 
 This project is an unofficial wrapper and mirror of the RK Gaming configuration software. It is not affiliated with, endorsed by, or connected to RK Gaming. All original web assets belong to their respective owners.
+
+---
+
+## Hinweis zur KI-Unterstützung
+
+Bei der Entwicklung dieses Projekts wurden teilweise oder vollständig KI-gestützte Tools und Technologien eingesetzt.
